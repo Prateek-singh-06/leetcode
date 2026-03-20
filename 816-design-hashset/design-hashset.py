@@ -2,28 +2,20 @@ class MyHashSet:
     # new_set=[]
 
     def __init__(self):
-        self.new_set=[]
+        # self.new_set_size=500
+        self.new_set=[False]*(10**6+1)
         
 
     def add(self, key: int) -> None:
-        if(self.contains(key)):
-            return None
-        else:
-            self.new_set.append(key)
+        self.new_set[key]=True
         
 
     def remove(self, key: int) -> None:
-        if(self.contains(key)==False):
-            return None
-        else:
-            self.new_set.remove(key)
+        self.new_set[key]=False
         
 
     def contains(self, key: int) -> bool:
-        for num in self.new_set:
-            if(num==key):
-                return True
-        return False
+        return self.new_set[key]
         
 
 
